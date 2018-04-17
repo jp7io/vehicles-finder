@@ -1,0 +1,3 @@
+export const FETCH_FILTERS = 'FETCH_FILTERS';
+export const SET_FILTER_VALUE = 'SET_FILTER_VALUE';
+export const FETCH_VEHICLES = 'FETCH_VEHICLES';
