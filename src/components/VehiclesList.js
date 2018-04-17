@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import staticData from '../data/vehicles';
+import { connect } from 'react-redux';
 import Vehicle from './Vehicle';
 
 class VehiclesList extends Component {
   render() {
     return (
       <div className="VehiclesList">
-        {staticData.vehicles.map(vehicle => (
+        {this.props.vehicles.map(vehicle => (
           <Vehicle vehicle={vehicle} key={vehicle._id} />
         ))}
       </div>
@@ -14,4 +14,8 @@ class VehiclesList extends Component {
   }
 }
 
-export default VehiclesList;
+const mapStateToProps = state => ({
+  vehicles: state.vehicles,
+});
+
+export default connect(mapStateToProps)(VehiclesList);
