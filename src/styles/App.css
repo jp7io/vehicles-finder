@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  padding: 15px;
+  font-family: sans-serif;
+  background: #ccc;
+}
+
+header {
+  background: #000;
+  margin: -15px -15px 15px -15px;
+  padding: 15px 5px;
+  display: flex;
+}
+
+header img {
+  height: 80px;
+}
+
+header h1 {
+  color: #fff;
+  padding: 0px;
+  font-weight: normal;
+}
+
+div {
+  border-radius: 5px;
+}
+
+.Filters {
+  background: #eee;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.Filters h2 {
+  margin: 0px 0px 10px 0px;
+}
+
+.Filters select {
+  width: 200px;
+  font-size: 20px;
+  margin-right: 15px;
+}
+
+.VehiclesList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Vehicle {
+  background: #eee;
+  color: #333;
+  padding: 15px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+
+.Vehicle img {
+  width: 240px;
+  height: 180px;
+}
