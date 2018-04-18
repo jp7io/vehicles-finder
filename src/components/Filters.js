@@ -1,34 +1,28 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import _ from 'lodash';
 import FilterSelect from './FilterSelect';
 import { fetchFilters } from '../actions/filters';
+import { setFilterValue } from '../actions/filtersValues';
 
 class Filters extends Component {
-
-  state = {
-    values: {
-      make: '',
-      model: '',
-      color: '',
-    }
-  }
 
   componentWillMount() {
     this.props.fetchFilters();
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.values !== this.props.values ) {
+      this.props.fetchFilters(_.pickBy(this.props.values));
+    }
+  }
+
   handleChange = (e) => {
-    this.setState({
-      values: {
-        ...this.state.values,
-        [e.target.name]: e.target.value
-      }
-    });
+    this.props.setFilterValue(e.target.name, e.target.value);
   }
 
   render() {
-    const filters = this.props.filters;
-    const values = this.state.values;
+    const { filters, values } = this.props;
     if (!filters) {
       return <div>Loading...</div>
     }
@@ -64,9 +58,11 @@ class Filters extends Component {
 const mapStateToProps = (state) => {
   return {
     filters: state.filters.options,
+    values: state.filtersValues,
   };
 }
 
 export default connect(mapStateToProps, {
   fetchFilters,
+  setFilterValue,
 })(Filters);
