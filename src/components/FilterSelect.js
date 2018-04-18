@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 class FilterSelect extends Component {
-
   render() {
     const { name, label, value, options, onChange } = this.props;
     return (
@@ -15,7 +14,7 @@ class FilterSelect extends Component {
           <option key={option._id} value={option.slug}>{option.name}</option>
         ))}
       </select>
-    )
+    );
   }
 }
 

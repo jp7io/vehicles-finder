@@ -6,7 +6,6 @@ import { fetchFilters } from '../actions/filters';
 import { setFilterValue } from '../actions/filtersValues';
 
 class Filters extends Component {
-
   componentWillMount() {
     this.props.fetchFilters();
   }
@@ -51,7 +50,7 @@ class Filters extends Component {
           options={filters.colors}
         />
       </div>
-    )
+    );
   }
 }
 
