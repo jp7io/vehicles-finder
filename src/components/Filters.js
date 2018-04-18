@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import staticData from '../data/filters';
+import { connect } from 'react-redux';
 import FilterSelect from './FilterSelect';
+import { fetchFilters } from '../actions/filters';
 
 class Filters extends Component {
 
@@ -10,6 +11,10 @@ class Filters extends Component {
       model: '',
       color: '',
     }
+  }
+
+  componentWillMount() {
+    this.props.fetchFilters();
   }
 
   handleChange = (e) => {
@@ -22,7 +27,7 @@ class Filters extends Component {
   }
 
   render() {
-    const filters = staticData;
+    const filters = this.props.filters;
     const values = this.state.values;
     if (!filters) {
       return <div>Loading...</div>
@@ -56,4 +61,12 @@ class Filters extends Component {
   }
 }
 
-export default Filters;
+const mapStateToProps = (state) => {
+  return {
+    filters: state.filters.options,
+  };
+}
+
+export default connect(mapStateToProps, {
+  fetchFilters,
+})(Filters);
