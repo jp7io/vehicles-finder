@@ -3,11 +3,8 @@ import { FETCH_FILTERS } from './types';
 
 export const fetchFilters = (params = {}) => (
   (dispatch) => {
-    axios.get(`${process.env.REACT_APP_API}/public/cars/filters`, {
-      params: {
-        ...params,
-        brand: 'grupo-sinal',
-      },
+    axios.get(`${process.env.REACT_APP_API}/vehicles/filters`, {
+      params,
     }).then((response) => {
       dispatch({
         type: FETCH_FILTERS,
