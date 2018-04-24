@@ -11,7 +11,7 @@ class FilterSelect extends Component {
       >
         <option value="">Select {label}</option>
         {options.map(option => (
-          <option key={option._id} value={option.slug}>{option.name}</option>
+          <option key={option._id} value={option._id}>{option.name}</option>
         ))}
       </select>
     );
