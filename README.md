@@ -4,16 +4,16 @@
 
 ####  Live Demo
 
-* App: https://jp7internet.github.io/vehicles-finder/
+* App: https://jp7io.github.io/vehicles-finder/
 * API: https://vehicles-finder-api.herokuapp.com
 
 #### Step-by-Step Tutorial
 
-https://github.com/jp7internet/vehicles-finder/wiki
+https://github.com/jp7io/vehicles-finder/wiki
 
 #### Screenshots
 
-https://github.com/jp7internet/vehicles-finder/wiki/Screenshots
+https://github.com/jp7io/vehicles-finder/wiki/Screenshots
 
 #### Includes
 
